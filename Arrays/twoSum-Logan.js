@@ -1,0 +1,38 @@
+// https://leetcode.com/problems/two-sum/description
+// Time complexity O(n)
+// Memory complexity O(n)
+
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
+// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+// Example 2:
+
+// Input: nums = [3,2,4], target = 6
+// Output: [1,2]
+// Example 3:
+
+// Input: nums = [3,3], target = 6
+// Output: [0,1]
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let aux = [];
+
+   for (var i = 0; i < nums.length; i++) {
+    if(aux[0] + nums[i] == target){
+      return [i-1, i]
+    } else {
+      aux= [nums[i]]
+    }
+  }
+
+    return null;
+};
+
+console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum([3, 2, 4], 6));
+console.log(twoSum([3,3], 6));
